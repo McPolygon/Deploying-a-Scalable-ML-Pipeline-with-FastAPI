@@ -1,0 +1,4 @@
+Cleaned census data:
+1. normalized education column
+2. removed records that had no workclass or occupation
+3. removed any record that had an unknown native-country
