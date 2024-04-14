@@ -2,7 +2,7 @@
 Jesse Kukuk developed this model for the WGU/Udacity Machine Learning DevOps course. It employs the scikit-learn RandomForestClassifier model with its default hyperparameters.
 
 ## Model Details
-
+Employing the RandomForestClassifier, this model predicts an individual's salary range by analyzing attributes from their census data. Trained on openly accessible Census Bureau data, it categorizes users into two groups based on their income, with a threshold set at $50,000.
 
 ## Intended Use
 This model aims to predict an individual's salary range using attributes from their census data.
