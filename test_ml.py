@@ -1,28 +1,31 @@
 import pytest
-# TODO: add necessary import
 
-# TODO: implement the first test. Change the function name and input as needed
-def test_one():
-    """
-    # add description for the first test
-    """
-    # Your code here
-    pass
+from sklearn.ensemble import RandomForestClassifier
+from ml.model import (
+    compute_model_metrics,
+    inference,
+    train_model
+)
 
+def test_trainer():
+    X_train = [[1,2,3,4,5],[1,2,3,4,5]]
+    y_train = [[1,2,3,4,5],[1,2,3,4,5]]
+    X_test = [[1,2,3,4,5],[1,2,3,4,5]]
+    m = train_model(X_train, y_train)
+    p = m.predict(X_test)
+    assert p.all() == 1
 
-# TODO: implement the second test. Change the function name and input as needed
-def test_two():
-    """
-    # add description for the second test
-    """
-    # Your code here
-    pass
+def test_compute_metrics_model():
+    y_test = [1,0,1,0,1]
+    preds = [1,0,1,0,1]
+    p, r, fb = compute_model_metrics(y_test, preds)
+    assert fb == 1
 
-
-# TODO: implement the third test. Change the function name and input as needed
-def test_three():
-    """
-    # add description for the third test
-    """
-    # Your code here
-    pass
+def test_fucntion_inference():
+    X_train = [[1,2,3,4,5],[1,2,3,4,5]]
+    y_train = [[1,2,3,4,5],[1,2,3,4,5]]  
+    X_test = [[1,2,3,4,5],[1,2,3,4,5]] 
+    random_forest = RandomForestClassifier()
+    model = random_forest.fit(X_train, y_train)
+    p = inference(model, X_test)
+    assert p.all() == 1
