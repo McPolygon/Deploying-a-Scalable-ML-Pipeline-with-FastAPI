@@ -2,14 +2,16 @@ import json
 
 import requests
 
-# TODO: send a GET using the URL http://127.0.0.1:8000
-r = # Your code here
+#Send a GET using the URL http://127.0.0.1:8000
+u = 'http://127.0.0.1:8000'
+r = requests.get(url = u)
 
-# TODO: print the status code
-# print()
-# TODO: print the welcome message
-# print()
+# Print Status Code
+print("Status Code:", r.status_code)
 
+# Prints Message
+msg = list(r.json().values())
+print('Welcome to the next level of AI-Devops! McPolygon:', msg[0])
 
 
 data = {
@@ -29,10 +31,12 @@ data = {
     "native-country": "United-States",
 }
 
-# TODO: send a POST using the data above
-r = # Your code here
+#Send a POST using the data above
+r = requests.post(url = 'http://127.0.0.1:8000/data/', data = json.dumps(data))
 
-# TODO: print the status code
-# print()
-# TODO: print the result
-# print()
+#Print the status code
+print("Status Code:", r.status_code)
+
+#Print the results
+msg = list(r.json().values())
+print("Results:", msg[0])
