@@ -43,3 +43,4 @@ Precision, Recall, and F1 scores were utilized to evaluate the model. The obtain
 Further investigation is required to uncover potential biases within the dataset and to verify that all incorporated features effectively represent the broader population. It's important to note that the training data, while valuable, might not comprehensively mirror every demographic segment within the population. This indicates the necessity for additional measures to enhance the dataset's representativeness and address any underlying biases.
 
 ## Caveats and Recommendations
+The gender bias in the data requires investigation due to its imbalance, as it could lead to a model that discriminates against certain groups. Males account for ~67% of all records in the clensed dataset. It is imperative to thoroughly examine the data before utilizing it to mitigate potential discrimination. Recommend balancing and weighting of geneders to normalize model.
